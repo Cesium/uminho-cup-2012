@@ -1,6 +1,8 @@
 PlayAuth::Engine.load_seed
 PlayFutsal::Engine.load_seed
 
+puts 'Creating admin'
+
 admin = PlayAuth::User.create  :email => 'mpalhas@gmail.com',
                     :first_name       => 'Miguel',
                     :last_name        => 'Palhas',
