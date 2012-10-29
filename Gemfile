@@ -6,8 +6,8 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'play_auth',   :git => 'git@github.com:naps62/PlayAuth.git'
-gem 'play_futsal', :git => 'git@github.com:MiguelCosta/PlayFutsal.git'
+gem 'play_auth',   :git => 'https://github.com/naps62/PlayAuth.git'
+gem 'play_futsal', :git => 'https://github.com/MiguelCosta/PlayFutsal.git'
 
 
 # Gems used only for assets and not required

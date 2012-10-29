@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:MiguelCosta/PlayFutsal.git
+  remote: https://github.com/MiguelCosta/PlayFutsal.git
   revision: 5deabca1bd539efa377cf8168191dd423ff06d29
   specs:
     play_futsal (0.0.1)
@@ -8,7 +8,7 @@ GIT
       twitter-bootstrap-rails
 
 GIT
-  remote: git@github.com:naps62/PlayAuth.git
+  remote: https://github.com/naps62/PlayAuth.git
   revision: 07f5ecbc4c2d189cfbac548604151fbfb66efbf0
   specs:
     play_auth (0.0.1)
