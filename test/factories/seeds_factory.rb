@@ -14,6 +14,7 @@ FactoryGirl.define do
       last_name  'Palhas'
       email      'mpalhas@gmail.com'
       password   'mpalhas'
+      after_create { |user| user.confirm! }
 
       roles [ PlayFutsal::Role.find_or_create_by_name('FutsalAdmin') ]
     end
