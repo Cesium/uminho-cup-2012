@@ -8,10 +8,19 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
  *= require_tree .
+ *= require_self
  */
 
 body {
-  background-image: url(/images/pattern_destruction.png);
+  background-image: url(<%= image_path 'pattern.png' %>);
+  background-repeat: repeat;
+  background-attachment:fixed;
+}
+
+#main {
+  padding-top: 60px;
+  background-image: url(<%= image_path 'pattern_destruction.png' %>);
+  background-repeat: repeat-x;
+  background-attachment:fixed;
 }

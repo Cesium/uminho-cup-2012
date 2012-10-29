@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "PlayFutsal" %></title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= stylesheet_link_tag    "play_futsal/application", :media => "all" %>
+    <%= javascript_include_tag "play_futsal/application" %>
+    <%= csrf_meta_tags %>
+    <%= yield(:head) %>
+  </head>
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+      <header class="navbar navbar-fixed-top navbar-inverse">
+        <nav class="navbar-inner">
+          <div class="container">
+            <a class="brand" href="#">Uminho Cup 2012/2013</a>
+            <%= render 'layouts/play_futsal/navigation' %>
+          </div>
+        </nav>
+      </header>
+
+      <div id="main" role="main">
+        <div class="container">
+          <div class="row">
+            <div class="span9 offset3">
+              <h1><%= yield(:title) %><h1>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="span3">
+              <figure id="logo">
+                <img src="<%= image_path 'play_futsal/logo_uminho_cup.png' %>" alt="uminho_cup_logo" />
+              </figure>
+            </div>
+
+            <div class="span9 content">
+
+              <% if flash[:notice] %>
+                <div class="alert alert-success" id="notice"><%= flash[:notice] %></div>
+              <% end %>
+              <% if flash[:error] %>
+                <div class="alert alert-error" id="error"><%= flash[:error] %></div>
+              <% end %>
+              <%#= render 'layouts/play_futsal/messages' %>
+              <%= yield %>
+            </div>
+          </div>
+          <footer>
+          </footer>
+        </div> <!--! end of .container -->
+      </div> <!--! end of #main -->
+  </body>
+</html>
