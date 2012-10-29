@@ -68,7 +68,6 @@ FactoryGirl.define do
   #### Match
   factory :match, :class => 'PlayFutsal::Match' do
     sequence(:desc)
-    datetime { 2.days.from_now..10.days.from_now }
   end
 
 end
