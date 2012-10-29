@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/MiguelCosta/PlayFutsal.git
-  revision: 5deabca1bd539efa377cf8168191dd423ff06d29
+  revision: 35801066b8f8804c69ae5b874d8ae4de6e07d0fb
   specs:
     play_futsal (0.0.1)
       rails (~> 3.2.8)
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/naps62/PlayAuth.git
-  revision: 07f5ecbc4c2d189cfbac548604151fbfb66efbf0
+  revision: 1137850688dee1d96eeead0a0038ad0b207bcc1e
   specs:
     play_auth (0.0.1)
       cancan (>= 1.6.8)
