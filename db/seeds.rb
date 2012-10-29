@@ -3,7 +3,7 @@ PlayFutsal::Engine.load_seed
 
 puts 'Creating admin'
 
-admin = PlayAuth::User.create  :email => 'mpalhas@gmail.com',
+admin = PlayAuth::User.create  :email => 'admin@uminho.cup',
                     :first_name       => 'Miguel',
                     :last_name        => 'Palhas',
                     :password         => ENV['UMINHO_CUP_PASSWORD'],
