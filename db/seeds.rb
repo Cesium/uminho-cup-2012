@@ -1,11 +1,11 @@
 PlayAuth::Engine.load_seed
 PlayFutsal::Engine.load_seed
 
-admin = PlayAuth::Role.find_by_name('Admin').users.first
+admin = PlayAuth::User.create  :email => 'mpalhas@gmail.com',
+                    :first_name       => 'Miguel',
+                    :last_name        => 'Palhas',
+                    :password         => ENV['UMINHO_CUP_PASSWORD'],
+                    :confirmed_at     => Time.now
 
-admin.update_attributes :email      => 'admin@uminhocup.com',
-                        :first_name => 'UminhoCup',
-                        :last_name  => 'Admin',
-                        :password   => ENV['UMINHO_CUP_PASSWORD']
 admin.confirm!
 admin.save
