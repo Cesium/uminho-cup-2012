@@ -8,13 +8,13 @@ FactoryGirl.define do
     email        { Faker::Internet.email }
     password     { Faker::Internet.email }
     roles        [ PlayFutsal::Role.find_or_create_by_name('FutsalAthlete') ]
+    after(:build) { |user| user.confirm! }
 
     factory :admin do
       first_name 'Miguel'
       last_name  'Palhas'
       email      'mpalhas@gmail.com'
       password   'mpalhas'
-      after(:build) { |user| user.confirm! }
 
       roles [ PlayFutsal::Role.find_or_create_by_name('FutsalAdmin') ]
     end
