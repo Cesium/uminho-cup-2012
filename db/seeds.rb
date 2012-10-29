@@ -11,3 +11,7 @@ admin = PlayAuth::User.create  :email => 'admin@uminho.cup',
 
 admin.confirm!
 admin.save
+
+puts 'Generating test data. This might take a while...'
+FactoryGirl.find_definitions
+FactoryGirl.create_list :full_group_with_matches, 2
