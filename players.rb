@@ -3,7 +3,7 @@
 require 'securerandom'
 
 def find_team(name)
-  yield PlayFutsal::Team.find_by_name(name)
+  yield PlayFutsal::Team.find_or_create_by_name(name)
 end
 
 $COUNT = 0
@@ -101,7 +101,7 @@ find_team("Pollypockets") do |team|
   add_player team, "Stefano", "Araújo"
   add_player team, "Dany", "Oliveira"
   add_player team, "José", "Tiago Martins Rodrigues"
-  add_player team "Jogador", "10"
+  add_player team, "Jogador", "10"
 end
 
 find_team("Direito") do |team|
