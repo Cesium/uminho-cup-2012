@@ -11,7 +11,7 @@ def add_player(team, first_name, last_name)
   user = PlayFutsal::User.create  email: "dummy#{$COUNT}@uminho.cup",
                                   first_name: first_name,
                                   last_name:  last_name,
-                                  password: SecureRandom.hex(16)
+                                  password: SecureRandom.hex(16),
                                   confirmed_at: Time.now
   user.confirm!
   user.save
