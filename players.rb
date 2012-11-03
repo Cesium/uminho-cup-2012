@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 def find_team(name)
   yield PlayFutsal::Team.find_by_name(name)
 end
