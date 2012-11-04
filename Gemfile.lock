@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/MiguelCosta/PlayFutsal.git
-  revision: e2026d5b72ce7bb9c64f319660b423d155ca951f
+  revision: 4be2dcb3470af965eaf35399b6b6bbfb45218f2c
   specs:
     play_futsal (0.0.1)
       rails (~> 3.2.8)
