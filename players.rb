@@ -2,12 +2,22 @@
 
 require 'securerandom'
 
+
 def find_team(name)
   yield PlayFutsal::Team.find_or_create_by_name(name)
 end
 
-$COUNT = 0
+def find_group(group)
+  PlayFutsal::Group.find_or_create_by_name("Grupo #{group}")
+end
+
+def find_user(team, first_name, last_name)
+  user = PlayFutsal::User.find_by_first_name_and_last_name(first_name, last_name)
+end
+
+$COUNT = 130
 def add_player(team, first_name, last_name)
+  return if find_user(team, first_name, last_name)
   user = PlayFutsal::User.create  email: "dummy#{$COUNT}@uminho.cup",
                                   first_name: first_name,
                                   last_name:  last_name,
@@ -17,15 +27,17 @@ def add_player(team, first_name, last_name)
   user.save
   $COUNT = $COUNT + 1
 
+  puts user.id
+
   player = PlayFutsal::Athlete.create  user_id: user.id,
                                        team_id: team.id,
-                                       sequence: team.athletes.count
+                                       number: team.athletes.count
   player.save!
 end
 
 # GRUPO A
-
 find_team("Los Apaches") do |team|
+  team.group = find_group('A')
   # 7
   # DONE
   add_player team, "André", "Macedo"
@@ -38,6 +50,7 @@ find_team("Los Apaches") do |team|
 end
 
 find_team("Borussia Doutromundo") do |team|
+  team.group = find_group('A')
   # 10
   add_player team, "Joel", "Tiago Bernardes Ribeiro"
   add_player team, "Ivo", "Miguel Monteiro da Silva"
@@ -52,6 +65,7 @@ find_team("Borussia Doutromundo") do |team|
 end
 
 find_team("Rossas FC") do |team|
+  team.group = find_group('A')
   # 8
   # DONE
   add_player team, "António", "Fernandes"
@@ -65,6 +79,7 @@ find_team("Rossas FC") do |team|
 end
 
 find_team("Os Mestiços") do |team|
+  team.group = find_group('A')
   # 10
   # DONE
   add_player team, "Marco",  "António Freitas"
@@ -81,16 +96,18 @@ end
 
 # GRUPO B
 
-#find_team("Sei Lá") do |team|
+find_team("Sei Lá") do |team|
+  team.group = find_group('B')
 #  add_player team, "", ""
 #  add_player team, "", ""
 #  add_player team, "", ""
 #  add_player team, "", ""
 #  add_player team, "", ""
 #  add_player team, "", ""
-#end
+end
 
 find_team("Pollypockets") do |team|
+  team.group = find_group('B')
   # 10
   add_player team, "Hélio", "Costa"
   add_player team, "Bruno", "Oliveira"
@@ -105,6 +122,7 @@ find_team("Pollypockets") do |team|
 end
 
 find_team("Direito") do |team|
+  team.group = find_group('B')
   # 10
   # DONE
   add_player team, "Rafael", "Ribeiro Santos"
@@ -120,6 +138,7 @@ find_team("Direito") do |team|
 end
 
 find_team("Economia") do |team|
+  team.group = find_group('B')
   # 10
   add_player team, "José", "Luís Ferreira"
   add_player team, "Wilson", "Santos"
@@ -136,6 +155,7 @@ end
 # GRUPO C
 
 find_team("bestas de LEI") do |team|
+  team.group = find_group('C')
   # 10
   # DONE
   add_player team, "Besta", "62"
@@ -152,6 +172,7 @@ end
 
 
 find_team("Centro de Emprego") do |team|
+  team.group = find_group('C')
   # 10
   # DONE
   add_player team, "Duarte", "Nuno Martins da Cunha Oliveira"
@@ -167,6 +188,7 @@ find_team("Centro de Emprego") do |team|
 end
 
 find_team("Randomly United") do |team|
+  team.group = find_group('C')
   # 8
   # DONE
   add_player team, "Guilherme", "Rodrigues"
@@ -180,6 +202,7 @@ find_team("Randomly United") do |team|
 end
 
 find_team("Los Melones") do |team|
+  team.group = find_group('C')
   # 10
   # Done
   add_player team, "Miguel", "Angel Alfaro Lavin"
@@ -197,6 +220,7 @@ end
 # GRUPO D
 
 find_team("TroLEI FC") do |team|
+  team.group = find_group('D')
   # 9
   # Done
   add_player team, "José", "Marcos Ribeiro Carvalho"
@@ -211,6 +235,7 @@ find_team("TroLEI FC") do |team|
 end
 
 find_team("EGSI") do |team|
+  team.group = find_group('D')
   # 6
   # DONE
   add_player team, "Danilo", "Santos"
@@ -222,6 +247,7 @@ find_team("EGSI") do |team|
 end
 
 find_team("Ginha Team") do |team|
+  team.group = find_group('D')
   # 8
   # DONE
   add_player team, "João", "pedro vaz costa"
@@ -234,11 +260,12 @@ find_team("Ginha Team") do |team|
   add_player team, "joão", "Araújo"
 end
 
-#find_team("Rangers de Lamego") do |team|
+find_team("Rangers de Lamego") do |team|
+  team.group = find_group('D')
 #  add_player team, "", ""
 #  add_player team, "", ""
 #  add_player team, "", ""
 #  add_player team, "", ""
 #  add_player team, "", ""
 #  add_player team, "", ""
-#end
+end

@@ -8,8 +8,8 @@ admin = PlayAuth::User.create  :email => 'admin@uminho.cup',
                     :last_name        => 'Palhas',
                     :password         => ENV['UMINHO_CUP_PASSWORD'],
                     :confirmed_at     => Time.now
-
 admin.confirm!
+admin.roles << PlayFutsal::Role.find_by_name('Admin')
 admin.save
 
 #puts 'Generating test data. This might take a while...'
