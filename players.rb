@@ -262,10 +262,14 @@ end
 
 find_team("Rangers de Lamego") do |team|
   team.group = find_group('D')
-#  add_player team, "", ""
-#  add_player team, "", ""
-#  add_player team, "", ""
-#  add_player team, "", ""
-#  add_player team, "", ""
-#  add_player team, "", ""
+  add_player team, "André", "Pimenta"
+  add_player team, "Miguel", "Pinto da Costa"
+  add_player team, "Marco", "Ribeiro"
+  add_player team, "Milton", "Nunes"
+  add_player team, "Cedric", "Pimenta"
+  add_player team, "Nuno", "de Carvalho"
+  add_player team, "Pedro", "Duarte"
+  add_player team, "Serafim", "Pinto"
+  add_player team, "Mário", "Leite"
+  add_player team, "Ricardo", "Santos"
 end
